@@ -10,8 +10,8 @@ import {
 
 function WorkingModel() {
   return (
-    <section id="how-it-works" className="fixed inset-0 bg-white overflow-y-auto">
-      <div className="min-h-screen w-full flex flex-col items-center justify-start pt-16 pb-4">
+    <section id="how-it-works" className="w-full bg-white">
+      <div className="w-full flex flex-col items-center justify-start">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -27,7 +27,7 @@ function WorkingModel() {
 
             <div className="space-y-10">
               <Step
-                number={1}
+                number="1"
                 title="Cough Sound Analysis"
                 description="Our AI analyzes your cough's acoustic patterns to detect subtle signs of tuberculosis that may not be audible to human ears. The analysis takes less than 20 seconds and can be done from any smartphone."
                 icon={<Mic className="w-12 h-12 text-primary-600 mb-3" />}
@@ -36,7 +36,7 @@ function WorkingModel() {
               />
 
               <Step
-                number={2}
+                number="2"
                 title="Chest X-Ray Analysis"
                 description="Upload your chest X-ray for our AI to analyze. The system can detect abnormalities consistent with tuberculosis with an accuracy rate of 96%, often catching signs that might be missed in early stages."
                 icon={<FileImage className="w-12 h-12 text-primary-600 mb-3" />}
@@ -45,7 +45,7 @@ function WorkingModel() {
               />
 
               <Step
-                number={3}
+                number="3"
                 title="Blood Test Analysis"
                 description="Our AI system also analyzes blood test results to identify markers associated with tuberculosis infection, providing a comprehensive screening approach combining multiple data points."
                 icon={<Activity className="w-12 h-12 text-primary-600 mb-3" />}
@@ -54,7 +54,7 @@ function WorkingModel() {
               />
 
               <Step
-                number={4}
+                number="4"
                 title="Doctor Consultation"
                 description="If our AI detects potential TB indicators, you're instantly connected to a qualified doctor via secure video consultation. The doctor reviews your results and provides personalized medical advice."
                 icon={<Video className="w-12 h-12 text-primary-600 mb-3" />}
@@ -63,7 +63,7 @@ function WorkingModel() {
               />
 
               <Step
-                number={5}
+                number="5"
                 title="Secure Data Storage"
                 description="All your medical data, including AI analysis reports, prescriptions, and test results, are securely stored using blockchain technology, ensuring privacy, data integrity, and seamless access across healthcare providers."
                 icon={<Shield className="w-12 h-12 text-primary-600 mb-3" />}

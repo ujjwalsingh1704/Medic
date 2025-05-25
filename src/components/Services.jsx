@@ -15,27 +15,27 @@ function Services() {
   const services = [
     {
       icon: Stethoscope,
-      title: "Online Consultations",
+      title: "TB Detector",
       description: "Connect with doctors virtually for medical advice and consultations."
     },
     {
       icon: Pill,
-      title: "Digital Prescriptions",
+      title: "Prescriptions Analysis",
       description: "Get your prescriptions digitally and manage your medications easily."
     },
     {
       icon: Heart,
-      title: "Health Monitoring",
+      title: "Online Consultation",
       description: "Track your vital signs and health metrics in real-time."
     },
     {
       icon: Activity,
-      title: "Fitness Tracking",
+      title: "Digital Twin",
       description: "Monitor your physical activity and set fitness goals."
     },
     {
       icon: Clock,
-      title: "24/7 Support",
+      title: "Mental Health Co-pilot",
       description: "Access healthcare support and assistance anytime, anywhere."
     },
     {
