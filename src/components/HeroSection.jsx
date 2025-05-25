@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Activity, Shield, Clock } from 'lucide-react';
+import { ArrowRight, Activity, Shield, Clock, ClipboardList } from 'lucide-react';
 
 function HeroSection() {
   return (
@@ -41,7 +41,7 @@ function HeroSection() {
                 <p className="text-gray-600">Access healthcare services anytime, anywhere.</p>
               </div>
               <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-                <Activity className="w-12 h-12 text-indigo-600 mb-4" />
+                <ClipboardList className="w-12 h-12 text-indigo-600 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Easy Prescriptions</h3>
                 <p className="text-gray-600">Get digital prescriptions delivered to your inbox.</p>
               </div>

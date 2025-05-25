@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 const UserInput = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -36,12 +34,12 @@ const UserInput = ({ onSubmit }) => {
           <p className="text-indigo-600">Please provide your health information for personalized analysis</p>
         </div>
 
-        <Card className="overflow-hidden bg-white shadow-xl">
-          <CardHeader className="pb-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
-            <CardTitle className="text-lg">Personal Health Information</CardTitle>
-          </CardHeader>
+        <div className="overflow-hidden bg-white shadow-xl rounded-lg">
+          <div className="pb-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-4">
+            <h2 className="text-lg font-semibold">Personal Health Information</h2>
+          </div>
 
-          <CardContent className="p-6">
+          <div className="p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -175,13 +173,16 @@ const UserInput = ({ onSubmit }) => {
               </div>
 
               <div className="flex justify-center">
-                <Button type="submit" className="bg-indigo-600 hover:bg-indigo-700 px-8">
+                <button
+                  type="submit"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-2 rounded-md transition-colors"
+                >
                   Generate Health Analysis
-                </Button>
+                </button>
               </div>
             </form>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

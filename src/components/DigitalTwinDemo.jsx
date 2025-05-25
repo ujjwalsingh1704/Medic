@@ -1,8 +1,5 @@
 import { useState } from "react";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Bell, TrendingUp, Calendar, Heart, Activity, Target, BarChart3 } from "lucide-react";
-import { Progress } from "../components/ui/progress";
 
 const DigitalTwinDemo = ({ userData }) => {
   const [selectedTimeframe, setSelectedTimeframe] = useState('1year');
@@ -203,36 +200,33 @@ const DigitalTwinDemo = ({ userData }) => {
           <p className="text-indigo-600">Your personalized health prediction dashboard</p>
         </div>
         
-        <Card className="overflow-hidden bg-white shadow-xl">
-          <CardHeader className="pb-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white">
-            <CardTitle className="flex items-center justify-between text-lg">
+        <div className="overflow-hidden bg-white shadow-xl rounded-lg">
+          <div className="pb-2 bg-gradient-to-r from-indigo-600 to-blue-600 text-white p-4">
+            <div className="flex items-center justify-between text-lg">
               <span className="flex items-center">
                 <Bell className="h-5 w-5 mr-2" />
                 Health Predictions
               </span>
               <div className="flex space-x-1">
                 {['1year', '3year', '5year'].map((timeframe) => (
-                  <Button
+                  <button
                     key={timeframe}
-                    variant={selectedTimeframe === timeframe ? "default" : "outline"}
-                    size="sm"
-                    className={`text-xs ${
+                    className={`text-xs px-3 py-1 rounded-md ${
                       selectedTimeframe === timeframe
                         ? 'bg-white text-indigo-600 hover:bg-white/90'
-                        : 'border-white/20 text-white hover:bg-white/10'
+                        : 'border border-white/20 text-white hover:bg-white/10'
                     }`}
                     onClick={() => setSelectedTimeframe(timeframe)}
                   >
                     {timeframe === '1year' ? '1Y' : timeframe === '3year' ? '3Y' : '5Y'}
-                  </Button>
+                  </button>
                 ))}
               </div>
-            </CardTitle>
-          </CardHeader>
+            </div>
+          </div>
 
-          <CardContent className="p-6">
+          <div className="p-6">
             <div className="space-y-6">
-             
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="bg-indigo-50 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -250,59 +244,57 @@ const DigitalTwinDemo = ({ userData }) => {
                   </div>
                 </div>
 
-                <div className="bg-blue-50 rounded-lg p-4">
+                <div className="bg-indigo-50 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
-                    <Activity className="h-5 w-5 text-blue-600" />
-                    <span className="text-sm font-medium text-blue-600">Quality of Life</span>
+                    <Activity className="h-5 w-5 text-indigo-600" />
+                    <span className="text-sm font-medium text-indigo-600">Quality of Life</span>
                   </div>
-                  <div className="text-2xl font-bold text-blue-600">
+                  <div className="text-2xl font-bold text-indigo-600">
                     {selectedTimeframe === '1year'
                       ? qualityOfLife.withTreatment
-                      : qualityOfLife.optimal}
+                      : qualityOfLife.optimal}{" "}
                     /10
                   </div>
-                  <div className="text-sm text-blue-500">
-                    +{qualityOfLife.improvement} improvement
+                  <div className="text-sm text-indigo-500">
+                    +{qualityOfLife.improvement} points improvement
                   </div>
                 </div>
               </div>
 
-             
-              <div>
-                <h4 className="font-medium text-lg mb-4 text-indigo-900">Health Metrics Forecast</h4>
-                <div className="space-y-4">
-                  {Object.entries(healthMetrics.current).map(([metric, currentValue]) => {
-                    const predictedValue =
-                      healthMetrics.predictions[selectedTimeframe][metric];
-                    const improvement = predictedValue - currentValue;
-
-                    return (
-                      <div key={metric} className="space-y-2">
-                        <div className="flex justify-between text-sm">
-                          <span className="capitalize text-indigo-900 font-medium">
-                            {metric.replace(/([A-Z])/g, " $1").trim()}
-                          </span>
-                          <span
-                            className={
-                              improvement > 0 ? "text-indigo-600" : "text-red-600"
-                            }
-                          >
-                            {currentValue}% → {predictedValue}% (
-                            {improvement > 0 ? "+" : ""}
-                            {improvement}%)
-                          </span>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(healthMetrics.current).map(([metric, value]) => {
+                  const predictedValue = healthMetrics.predictions[selectedTimeframe][metric];
+                  const improvement = predictedValue - value;
+                  return (
+                    <div key={metric} className="bg-white rounded-lg p-4 border border-indigo-100">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-sm font-medium text-indigo-900 capitalize">
+                          {metric.replace(/([A-Z])/g, ' $1').trim()}
+                        </span>
+                        <span className="text-sm font-medium text-indigo-600">
+                          {value}%
+                        </span>
+                      </div>
+                      <div className="relative">
+                        <div className="h-2 bg-indigo-100 rounded-full">
+                          <div
+                            className="h-2 bg-indigo-600 rounded-full"
+                            style={{ width: `${value}%` }}
+                          ></div>
                         </div>
-                        <div className="relative">
-                          <Progress value={currentValue} className="h-2 bg-indigo-100" />
-                          <Progress
-                            value={predictedValue}
-                            className="h-1 absolute top-0 opacity-60 bg-indigo-600"
-                          />
+                        <div className="h-2 bg-indigo-200 rounded-full mt-1">
+                          <div
+                            className="h-2 bg-indigo-400 rounded-full"
+                            style={{ width: `${predictedValue}%` }}
+                          ></div>
                         </div>
                       </div>
-                    );
-                  })}
-                </div>
+                      <div className="mt-1 text-xs text-indigo-500">
+                        Predicted: {predictedValue}% ({improvement > 0 ? '+' : ''}{improvement}%)
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div>
@@ -339,18 +331,18 @@ const DigitalTwinDemo = ({ userData }) => {
 
               
               <div className="flex justify-center space-x-4 mt-8">
-                <Button variant="outline" className="border-indigo-200 text-indigo-600 hover:bg-indigo-50">
+                <button className="flex items-center px-4 py-2 border border-indigo-200 text-indigo-600 hover:bg-indigo-50 rounded-md transition-colors">
                   <BarChart3 className="h-4 w-4 mr-2" />
                   View Full Report
-                </Button>
-                <Button className="bg-indigo-600 hover:bg-indigo-700">
+                </button>
+                <button className="flex items-center px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md transition-colors">
                   <Calendar className="h-4 w-4 mr-2" />
                   Plan Actions
-                </Button>
+                </button>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );

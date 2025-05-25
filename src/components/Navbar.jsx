@@ -28,8 +28,8 @@ function Navbar() {
               to="/" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               HOME
@@ -38,8 +38,8 @@ function Navbar() {
               to="/working-model" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/working-model') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               Model
@@ -48,8 +48,8 @@ function Navbar() {
               to="/services" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/services') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               Services
@@ -58,8 +58,8 @@ function Navbar() {
               to="/doctors" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/doctors') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               Doctors
@@ -68,8 +68,8 @@ function Navbar() {
               to="/about" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/about') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               ABOUT
@@ -78,8 +78,8 @@ function Navbar() {
               to="/contact" 
               className={`text-base font-clan-pro uppercase transition-all duration-300 ${
                 isActive('/contact') 
-                  ? 'text-indigo-600 font-bold' 
-                  : 'text-indigo-600 hover:text-indigo-800'
+                  ? 'text-indigo-600 font-bold text-lg' 
+                  : 'text-black hover:text-indigo-600'
               }`}
             >
               CONTACT
@@ -93,7 +93,7 @@ function Navbar() {
           </div>
 
           <button 
-            className="md:hidden p-2 text-indigo-600 hover:text-indigo-800"
+            className="md:hidden p-2 text-black hover:text-indigo-600"
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -113,8 +113,8 @@ function Navbar() {
                 to="/" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                 HOME
@@ -123,8 +123,8 @@ function Navbar() {
                 to="/working-model" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/working-model') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                  Model
@@ -133,8 +133,8 @@ function Navbar() {
                 to="/services" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/services') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                 Services
@@ -143,8 +143,8 @@ function Navbar() {
                 to="/doctors" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/doctors') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                 Doctors
@@ -153,8 +153,8 @@ function Navbar() {
                 to="/about" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/about') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                 ABOUT
@@ -163,8 +163,8 @@ function Navbar() {
                 to="/contact" 
                 className={`block text-base font-clan-pro uppercase py-2 transition-all duration-300 ${
                   isActive('/contact') 
-                    ? 'text-indigo-600 font-bold' 
-                    : 'text-indigo-600 hover:text-indigo-800'
+                    ? 'text-indigo-600 font-bold text-lg' 
+                    : 'text-black hover:text-indigo-600'
                 }`}
               >
                 Contact
