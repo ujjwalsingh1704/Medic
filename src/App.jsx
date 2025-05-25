@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
+import Hero from './components/Hero'
+import Assessment from './components/Assessment'
 import WorkingModel from './components/WorkingModel'
 import Services from './components/Services'
 import ScreeningProcess from './components/ScreeningProcess'
@@ -26,11 +27,7 @@ function App() {
         <Navbar />
         <div className="mt-16">
           <Routes>
-            <Route path="/" element={
-              <>
-                <HeroSection />
-              </>
-            } />
+            <Route path="/" element={<Hero />} />
             
             <Route
               path="/services"
@@ -47,28 +44,19 @@ function App() {
               }
             />
 
-            <Route path="/working-model" element={
-              <>
-                <WorkingModel />
-              </>
-            } />
-
-            <Route path="/about" element={
-              <>
-                <About />
-              </>
-            } />
+            <Route path="/working-model" element={<WorkingModel />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/doctors" element={<Doctors />} />
+            <Route path="/assessment" element={<Assessment />} />
             
-            <Route path="/contact" element={
-              <>
-                <Contact />
-              </>
-            } />
-
-            <Route path="/doctors" element={
-              <>
-                <Doctors />
-              </>
+            <Route path="/help" element={
+              <div className="min-h-screen bg-gradient-to-br from-calm-50 via-white to-sage-50 py-16">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <h1 className="text-4xl font-bold text-slate-800">Help & Support</h1>
+                  <p className="mt-4 text-lg text-slate-600">Coming soon...</p>
+                </div>
+              </div>
             } />
           </Routes>
         </div>
